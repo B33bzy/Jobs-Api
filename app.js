@@ -47,19 +47,15 @@ app.get('/', (req,res)=>{
   res.send('<h1>Jobs API</h1><a href="/api-docs">Documentation</a>');
 })
 
-// First serve static Swagger assets
-app.use('/api-docs', swaggerUI.serve);
-
-// Then serve the Swagger UI page
 app.use(
   '/api-docs',
+  swaggerUI.serve,
   swaggerUI.setup(swaggerDocument, {
     explorer: true,
     customSiteTitle: "Jobs API Docs",
+    customCssUrl: "https://unpkg.com/swagger-ui-dist/swagger-ui.css",
   })
 );
-
-
 
 // routes
 app.use('/api/v1/auth', authRouter);
