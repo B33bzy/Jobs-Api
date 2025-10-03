@@ -152,12 +152,12 @@ paths:
         - bearer: []
   /jobs/{id}:
     parameters:
-      - in: path
-        name: id
-        schema:
-          type: string
-        required: true
-        description: The job ID
+    - in: path
+      name: id
+      schema:
+        type: string
+      required: true
+      description: The job ID
     get:
       summary: Get Single Job
       deprecated: false
@@ -235,7 +235,7 @@ components:
       type: http
       scheme: bearer
 servers:
-  - url: https://todo-list-with-node-js.vercel.app/api/v1
+  - url: https://jobs-api-taupe.vercel.app/api/v1
     description: Production
 security:
   - bearer: []
